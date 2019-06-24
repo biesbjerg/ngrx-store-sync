@@ -2,9 +2,11 @@
 
 `src/app/reducers/index.ts`:
 ```ts
-import { ActionReducerMap, MetaReducer, ActionReducer, UPDATE, INIT } from '@ngrx/store';
+import { ActionReducerMap, MetaReducer, ActionReducer } from '@ngrx/store';
 
 import { storeSync } from '@app/store-sync/reducers';
+
+export interface State {}
 
 export const reducers: ActionReducerMap<State> = {};
 export const metaReducers: MetaReducer<any>[] = [storeSync];
@@ -13,9 +15,7 @@ export const metaReducers: MetaReducer<any>[] = [storeSync];
 `src/app/app.module.ts`:
 ```ts
 import { reducers, metaReducers } from '@app/reducers';
-
 ...
-
 @NgModule({
 	imports: [
 		BrowserModule,
